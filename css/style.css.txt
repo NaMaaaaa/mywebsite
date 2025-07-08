@@ -21,12 +21,12 @@ header {
 }
 
 .logo img {
-  width: 28px;        /* Taille réduite davantage */
+  width: 40px;
   height: auto;
-  margin-right: 10px;
-  max-height: 32px;   /* Empêche toute déformation */
-  vertical-align: middle;
+  max-height: 40px;
+  object-fit: contain;
 }
+
 
 
 
