@@ -21,11 +21,11 @@ header {
 }
 
 .logo img {
-  width: 40px;
+  width: 60px;
   height: auto;
-  max-height: 40px;
-  object-fit: contain;
+  margin-right: 10px;
 }
+
 
 
 
