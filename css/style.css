@@ -1,3 +1,4 @@
+/* === GLOBAL === */
 body {
   margin: 0;
   font-family: "Segoe UI", sans-serif;
@@ -5,46 +6,46 @@ body {
   color: #222;
 }
 
+/* === HEADER === */
 header {
   background: #fff;
   border-bottom: 2px solid #ccc;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 20px;
-  flex-wrap: wrap;
 }
 
-.logo {
-  display: flex;
-  align-items: center;
+/* Logo centré */
+.header-top {
+  text-align: center;
+  padding: 20px 0;
 }
 
-.logo img {
-  width: 60px;
+.logo-centered img {
+  width: 150px;
   height: auto;
-  margin-right: 10px;
-  display: inline-block;
-  vertical-align: middle;
+  transition: transform 0.3s ease-in-out;
 }
 
-.logo h1 {
-  font-size: 1.8em;
-  margin: 0;
-  display: inline-block;
-  vertical-align: middle;
+.logo-centered img:hover {
+  transform: scale(1.05);
+}
+
+/* === NAVIGATION === */
+nav {
+  display: flex;
+  justify-content: center;
+  background: #ffffff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
 nav .menu {
   list-style: none;
   display: flex;
-  gap: 20px;
+  gap: 30px;
   margin: 0;
-  padding: 0;
-  position: relative;
+  padding: 15px 0;
+  flex-wrap: wrap;
 }
 
-nav .menu li {
+nav .menu > li {
   position: relative;
 }
 
@@ -52,8 +53,15 @@ nav .menu > li > a {
   text-decoration: none;
   color: #2c3e50;
   font-weight: bold;
+  padding: 8px 12px;
+  transition: color 0.2s;
 }
 
+nav .menu > li > a:hover {
+  color: #6a1b9a;
+}
+
+/* === SUBMENU === */
 .submenu {
   display: none;
   position: absolute;
@@ -64,19 +72,48 @@ nav .menu > li > a {
   top: 100%;
   left: 0;
   z-index: 100;
+  min-width: 150px;
+}
+
+.submenu li {
+  padding: 5px 0;
+}
+
+.submenu li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: normal;
 }
 
 .menu li:hover .submenu {
   display: block;
 }
 
+/* === MAIN CONTENT === */
 main {
   padding: 40px 20px;
   text-align: center;
 }
 
+.intro h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.intro p {
+  font-size: 1.1em;
+  line-height: 1.6em;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* === FOOTER === */
 footer {
   background: #eee;
   text-align: center;
-  padding: 10px;
+  padding: 15px;
+  font-size: 0.9em;
+  color: #555;
+  margin-top: 40px;
 }
+
