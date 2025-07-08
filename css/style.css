@@ -24,11 +24,16 @@ header {
   width: 60px;
   height: auto;
   margin-right: 10px;
+  display: inline-block;
+  vertical-align: middle;
 }
 
-
-
-
+.logo h1 {
+  font-size: 1.8em;
+  margin: 0;
+  display: inline-block;
+  vertical-align: middle;
+}
 
 nav .menu {
   list-style: none;
