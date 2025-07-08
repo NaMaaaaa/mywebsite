@@ -21,11 +21,13 @@ header {
 }
 
 .logo img {
-  width: 40px;      /* Taille réduite */
+  width: 28px;        /* Taille réduite davantage */
   height: auto;
   margin-right: 10px;
-  max-height: 50px; /* Empêche l'écrasement si le logo est haut */
+  max-height: 32px;   /* Empêche toute déformation */
+  vertical-align: middle;
 }
+
 
 
 nav .menu {
