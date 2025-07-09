@@ -1,15 +1,40 @@
+/* VARIABLES */
+:root {
+  --color-bg: #fdfdfd;
+  --color-text: #222;
+  --color-accent: #6a1b9a;
+  --color-light: #f1f1f1;
+  --color-hover: #e0dff3;
+  --color-border: #ccc;
+  --font-base: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+
 /* RESET & BASE */
 body {
   margin: 0;
-  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  background: #fdfdfd;
-  color: #222;
+  font-family: var(--font-base);
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+h1, h2, h3 {
+  font-weight: bold;
+  color: var(--color-accent);
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  line-height: 1.3;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7;
+  margin: 0.8em 0;
 }
 
 /* HEADER */
 header {
   background: #fff;
-  border-bottom: 2px solid #ccc;
+  border-bottom: 2px solid var(--color-border);
   padding: 10px 20px;
   display: flex;
   justify-content: space-between;
@@ -41,7 +66,6 @@ header {
   font-weight: bold;
   color: #2c3e50;
 }
-
 /* MENU NAVIGATION */
 nav .menu {
   list-style: none;
@@ -68,7 +92,7 @@ nav .menu > li > a {
   background: #fff;
   list-style: none;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--color-border);
   top: 100%;
   left: 0;
   z-index: 100;
@@ -78,7 +102,7 @@ nav .menu > li > a {
   display: block;
 }
 
-/* HERO LOGO (optionnel) */
+/* HERO LOGO */
 .hero-logo {
   text-align: center;
   margin-top: 30px;
@@ -89,6 +113,7 @@ nav .menu > li > a {
   height: auto;
   margin-bottom: 20px;
 }
+
 /* INTRODUCTION */
 .intro {
   text-align: center;
@@ -97,16 +122,22 @@ nav .menu > li > a {
   margin: 0 auto;
 }
 
-/* ACCORDION (capes.html) */
+.texte-home {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  line-height: 1.7;
+  font-size: 1.05em;
+}
+/* ACCORDION (Étape 1 + Étape 2) */
 .accordion-section {
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
 }
 
-/* 🎯 Étape 1 — Nouvelle version accordéon accessible + animée */
 .accordion {
-  background-color: #f1f1f1;
+  background-color: var(--color-light);
   color: #2c3e50;
   cursor: pointer;
   padding: 15px;
@@ -122,7 +153,8 @@ nav .menu > li > a {
 
 .accordion:hover,
 .accordion:focus-visible {
-  background-color: #e0dff3;
+  background-color: var(--color-hover);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .accordion::after {
@@ -137,7 +169,7 @@ nav .menu > li > a {
 }
 
 .accordion:focus-visible {
-  outline: 2px solid #6a1b9a;
+  outline: 2px solid var(--color-accent);
   outline-offset: 2px;
 }
 
@@ -147,7 +179,7 @@ nav .menu > li > a {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.4s ease-out;
-  border-left: 3px solid #6a1b9a;
+  border-left: 3px solid var(--color-accent);
 }
 
 .panel ul {
@@ -191,5 +223,12 @@ footer {
     display: block;
     padding: 10px 0;
   }
-}
 
+  .intro, .texte-home, .accordion-section {
+    padding: 20px 15px;
+  }
+
+  .panel ul {
+    padding-left: 0;
+  }
+}
