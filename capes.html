@@ -49,7 +49,17 @@
       padding: 4px 0;
     }
   </style>
+
+  <!-- Intégration de MathJax pour LaTeX -->
+  <script>
+    MathJax = {
+      tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
 </head>
+
 <body>
   <header>
     <div class="logo-nav">
@@ -72,10 +82,12 @@
     <section class="intro">
       <h2>Leçons du CAPES 2025</h2>
       <p>Liste officielle des 44 leçons à préparer, organisée par thèmes.</p>
+      <p>Exemple d’écriture mathématique : \( x^2 + y^2 = z^2 \)</p>
     </section>
 
     <section class="accordion-section">
 
+      <!-- Un exemple de bloc accordéon -->
       <button class="accordion">🎲 Probabilités & Statistiques</button>
       <div class="panel">
         <ul>
@@ -190,3 +202,4 @@
   </script>
 </body>
 </html>
+
