@@ -11,7 +11,6 @@
       margin: 0 auto;
       padding: 20px;
     }
-
     .accordion {
       background-color: #eee;
       color: #444;
@@ -25,11 +24,9 @@
       transition: background-color 0.3s;
       font-weight: bold;
     }
-
     .accordion:hover {
       background-color: #ddd;
     }
-
     .panel {
       padding: 0 18px;
       background-color: white;
@@ -38,19 +35,15 @@
       transition: max-height 0.3s ease-out;
       border-left: 3px solid #6a1b9a;
     }
-
     .panel ul {
       padding: 10px 0;
       margin: 0;
       list-style: none;
     }
-
     .panel ul li {
       padding: 4px 0;
     }
   </style>
-
-  <!-- Intégration de MathJax pour LaTeX -->
   <script>
     MathJax = {
       tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
@@ -59,7 +52,6 @@
   </script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
 </head>
-
 <body>
   <header>
     <div class="logo-nav">
@@ -82,74 +74,24 @@
     <section class="intro">
       <h2>Leçons du CAPES 2025</h2>
       <p>Liste officielle des 44 leçons à préparer, organisée par thèmes.</p>
-      <p>Exemple d’écriture mathématique : \( x^2 + y^2 = z^2 \)</p>
     </section>
 
     <section class="accordion-section">
-
-      <!-- Un exemple de bloc accordéon -->
-      <button class="accordion">🎲 Probabilités & Statistiques</button>
-      <div class="panel">
-        <ul>
-          <li>1. Exemples de dénombrements dans différentes situations</li>
-          <li>2. Expérience aléatoire, probabilité, probabilité conditionnelle</li>
-          <li>3. Variables aléatoires discrètes</li>
-          <li>4. Variables aléatoires réelles à densité</li>
-          <li>5. Statistique à une ou deux variables, représentation et analyse de données</li>
-        </ul>
-      </div>
-
       <button class="accordion">🔢 Arithmétique & Nombres</button>
       <div class="panel">
         <ul>
-          <li>6. Multiples et diviseurs dans N, nombres premiers</li>
-          <li>7. PGCD dans Z</li>
-          <li>8. Congruences dans Z</li>
+          <li>6. Multiples et diviseurs dans \( \mathbb{N} \), nombres premiers</li>
+          <li>7. PGCD dans \( \mathbb{Z} \)</li>
+          <li>8. Congruences dans \( \mathbb{Z} \)</li>
         </ul>
       </div>
 
-      <button class="accordion">🔮 Nombres complexes & Trigonométrie</button>
-      <div class="panel">
-        <ul>
-          <li>9. Différentes écritures d’un nombre complexe</li>
-          <li>10. Utilisation des nombres complexes en géométrie</li>
-          <li>11. Trigonométrie</li>
-        </ul>
-      </div>
-
-      <button class="accordion">🧭 Géométrie & Espace</button>
-      <div class="panel">
-        <ul>
-          <li>12. Repérage dans le plan, dans l’espace, sur une sphère</li>
-          <li>13. Droites et plans dans l’espace</li>
-          <li>14. Transformations du plan. Frises et pavages</li>
-          <li>15. Relations métriques et angulaires dans le triangle</li>
-          <li>16. Solides de l’espace : représentations et calculs de volumes</li>
-          <li>17. Périmètres, aires, volumes</li>
-          <li>18. Exemples de résolution de problèmes de géométrie plane à l’aide des vecteurs</li>
-          <li>19. Produit scalaire dans le plan</li>
-          <li>20. Applications de la notion de proportionnalité à la géométrie</li>
-          <li>21. Problèmes de constructions géométriques</li>
-          <li>22. Exemples de problèmes d’alignement, de parallélisme</li>
-          <li>23. Exemples de problèmes d’intersection en géométrie</li>
-        </ul>
-      </div>
-
-      <button class="accordion">📈 Proportionnalité & Modélisation</button>
-      <div class="panel">
-        <ul>
-          <li>24. Pourcentages et taux d’évolution</li>
-          <li>25. Problèmes conduisant à une modélisation par des équations ou des inéquations</li>
-          <li>26. Problèmes conduisant à une modélisation par des graphes, par des matrices</li>
-        </ul>
-      </div>
-
-      <button class="accordion">📉 Fonctions, Analyse & Calcul</button>
+      <button class="accordion">📈 Fonctions, Analyse & Calcul</button>
       <div class="panel">
         <ul>
           <li>27. Fonctions polynômes du second degré. Équations et inéquations du second degré</li>
           <li>28. Suites numériques. Limites</li>
-          <li>29. Suites définies par récurrence un+1 = f(un)</li>
+          <li>29. Suites définies par récurrence \( u_{n+1} = f(u_n) \)</li>
           <li>30. Détermination de limites de fonctions réelles de variable réelle</li>
           <li>31. Théorème des valeurs intermédiaires</li>
           <li>32. Nombre dérivé. Fonction dérivée</li>
@@ -163,22 +105,69 @@
           <li>40. Exemples de modèles d’évolution</li>
         </ul>
       </div>
+     <button class="accordion">🎲 Probabilités & Statistiques</button>
+<div class="panel">
+  <ul>
+    <li>1. Exemples de dénombrements dans différentes situations</li>
+    <li>2. Expérience aléatoire, probabilité, probabilité conditionnelle</li>
+    <li>3. Variables aléatoires discrètes</li>
+    <li>4. Variables aléatoires réelles à densité</li>
+    <li>5. Statistique à une ou deux variables, représentation et analyse de données</li>
+  </ul>
+</div>
 
-      <button class="accordion">💻 Algorithmique & Raisonnement</button>
-      <div class="panel">
-        <ul>
-          <li>41. Problèmes dont la résolution fait intervenir un algorithme</li>
-          <li>42. Différents types de raisonnement en mathématiques</li>
-        </ul>
-      </div>
+<button class="accordion">🔮 Nombres complexes & Trigonométrie</button>
+<div class="panel">
+  <ul>
+    <li>9. Différentes écritures d’un nombre complexe</li>
+    <li>10. Utilisation des nombres complexes en géométrie</li>
+    <li>11. Trigonométrie</li>
+  </ul>
+</div>
 
-      <button class="accordion">🧠 Histoire & Applications</button>
-      <div class="panel">
-        <ul>
-          <li>43. Exemples d’approche historique de notions mathématiques enseignées au collège, au lycée</li>
-          <li>44. Applications des mathématiques à d’autres disciplines</li>
-        </ul>
-      </div>
+<button class="accordion">🧭 Géométrie & Espace</button>
+<div class="panel">
+  <ul>
+    <li>12. Repérage dans le plan, dans l’espace, sur une sphère</li>
+    <li>13. Droites et plans dans l’espace</li>
+    <li>14. Transformations du plan. Frises et pavages</li>
+    <li>15. Relations métriques et angulaires dans le triangle</li>
+    <li>16. Solides de l’espace : représentations et calculs de volumes</li>
+    <li>17. Périmètres, aires, volumes</li>
+    <li>18. Exemples de résolution de problèmes de géométrie plane à l’aide des vecteurs</li>
+    <li>19. Produit scalaire dans le plan</li>
+    <li>20. Applications de la notion de proportionnalité à la géométrie</li>
+    <li>21. Problèmes de constructions géométriques</li>
+    <li>22. Exemples de problèmes d’alignement, de parallélisme</li>
+    <li>23. Exemples de problèmes d’intersection en géométrie</li>
+  </ul>
+</div>
+
+<button class="accordion">📊 Proportionnalité & Modélisation</button>
+<div class="panel">
+  <ul>
+    <li>24. Pourcentages et taux d’évolution</li>
+    <li>25. Problèmes conduisant à une modélisation par des équations ou des inéquations</li>
+    <li>26. Problèmes conduisant à une modélisation par des graphes, par des matrices</li>
+  </ul>
+</div>
+
+<button class="accordion">💻 Algorithmique & Raisonnement</button>
+<div class="panel">
+  <ul>
+    <li>41. Problèmes dont la résolution fait intervenir un algorithme</li>
+    <li>42. Différents types de raisonnement en mathématiques</li>
+  </ul>
+</div>
+
+<button class="accordion">🧠 Histoire & Applications</button>
+<div class="panel">
+  <ul>
+    <li>43. Exemples d’approche historique de notions mathématiques enseignées au collège, au lycée</li>
+    <li>44. Applications des mathématiques à d’autres disciplines</li>
+  </ul>
+</div>
+
     </section>
   </main>
 
