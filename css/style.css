@@ -1,4 +1,4 @@
-/* === GLOBAL === */
+/* RESET & BASE */
 body {
   margin: 0;
   font-family: "Segoe UI", sans-serif;
@@ -6,18 +6,22 @@ body {
   color: #222;
 }
 
-/* === HEADER === */
+/* HEADER */
 header {
   background: #fff;
   border-bottom: 2px solid #ccc;
-  padding: 0 20px;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .logo-nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
+  width: 100%;
 }
 
 .logo-left {
@@ -27,27 +31,19 @@ header {
 }
 
 .logo-left img {
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
-  border-radius: 50%;
-  background: white;
-  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  height: 50px;
+  width: auto;
+  margin-right: 10px;
 }
 
-
 .site-title {
-  font-size: 1.6em;
+  font-size: 1.5em;
   font-weight: bold;
   color: #2c3e50;
 }
 
-/* === NAVIGATION === */
-nav {
-  margin-top: 10px;
-}
-
-.menu {
+/* MENU NAVIGATION */
+nav .menu {
   list-style: none;
   display: flex;
   gap: 20px;
@@ -55,24 +51,17 @@ nav {
   padding: 0;
 }
 
-.menu > li {
+nav .menu li {
   position: relative;
 }
 
-.menu > li > a {
+nav .menu > li > a {
   text-decoration: none;
   color: #2c3e50;
   font-weight: bold;
-  padding: 10px 5px;
-  display: inline-block;
-  transition: color 0.2s;
 }
 
-.menu > li > a:hover {
-  color: #6a1b9a;
-}
-
-/* === SUBMENU === */
+/* Dropdown sous-menu */
 .submenu {
   display: none;
   position: absolute;
@@ -83,48 +72,108 @@ nav {
   top: 100%;
   left: 0;
   z-index: 100;
-  min-width: 140px;
-}
-
-.submenu li {
-  padding: 5px 0;
-}
-
-.submenu li a {
-  text-decoration: none;
-  color: #333;
 }
 
 .menu li:hover .submenu {
   display: block;
 }
 
-/* === MAIN === */
-main {
-  padding: 40px 20px;
+/* HERO LOGO (optionnel) */
+.hero-logo {
   text-align: center;
+  margin-top: 30px;
 }
 
-.intro h2 {
-  font-size: 2em;
-  margin-bottom: 10px;
+.hero-img {
+  width: 120px;
+  height: auto;
+  margin-bottom: 20px;
 }
 
-.intro p {
-  font-size: 1.1em;
-  line-height: 1.6em;
-  max-width: 700px;
+/* INTRODUCTION */
+.intro {
+  text-align: center;
+  padding: 40px 20px;
+  max-width: 800px;
   margin: 0 auto;
 }
 
-/* === FOOTER === */
+/* ACCORDION (capes.html) */
+.accordion-section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 15px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 1.1em;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.accordion:hover {
+  background-color: #ddd;
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  border-left: 3px solid #6a1b9a;
+}
+
+.panel ul {
+  padding: 10px 0;
+  margin: 0;
+  list-style: none;
+}
+
+.panel ul li {
+  padding: 4px 0;
+}
+
+/* FOOTER */
 footer {
   background: #eee;
   text-align: center;
-  padding: 15px;
-  font-size: 0.9em;
-  color: #555;
+  padding: 10px;
   margin-top: 40px;
+  font-size: 0.9em;
+  color: #444;
 }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .logo-nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav .menu {
+    flex-direction: column;
+    width: 100%;
+    padding-top: 10px;
+  }
+
+  nav .menu li {
+    width: 100%;
+  }
+
+  nav .menu > li > a {
+    display: block;
+    padding: 10px 0;
+  }
+}
+
 
 
