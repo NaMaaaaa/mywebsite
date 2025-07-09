@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>eMat iMad - Accueil</title>
+  <title>CAPES - Leçons</title>
   <link rel="stylesheet" href="css/style.css" />
   <script>
-    window.MathJax = {
+    MathJax = {
       tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
       svg: { fontCache: 'global' }
     };
   </script>
-  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
 </head>
 <body>
   <header>
@@ -23,25 +23,8 @@
       <nav>
         <ul class="menu">
           <li><a href="index.html">Accueil</a></li>
-          <li>
-            <a href="college.html">Collège ▾</a>
-            <ul class="submenu">
-              <li><a href="#">6ème</a></li>
-              <li><a href="#">5ème</a></li>
-              <li><a href="#">4ème</a></li>
-              <li><a href="#">3ème</a></li>
-            </ul>
-          </li>
-          <li>
-            <a href="#">CAPES ▾</a>
-            <ul class="submenu">
-              <li><a href="capes.html">Leçons orales</a></li>
-              <li><a href="references.html">Références officielles</a></li>
-              <li><a href="demonstrations.html">Démonstrations</a></li>
-            </ul>
-          </li>
-
-
+          <li><a href="college.html">Collège</a></li>
+          <li><a href="capes.html">CAPES</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
@@ -50,48 +33,140 @@
 
   <main>
     <section class="intro">
-      <div class="hero-logo">
-        <img src="assets/img/logo.png" alt="Logo principal eMat iMad" class="hero-img" />
+      <h2>Leçons du CAPES 2025</h2>
+      <p>Liste officielle des 44 leçons à préparer, organisée par thèmes.</p>
+    </section>
+
+    <section class="accordion-section">
+      <!-- 1-5 -->
+      <button class="accordion" aria-expanded="false" aria-controls="panel1" id="accordion1">🎲 Probabilités & Statistiques</button>
+      <div class="panel" id="panel1" role="region" aria-labelledby="accordion1">
+        <ul>
+          <li>1. Exemples de dénombrements dans différentes situations</li>
+          <li>2. Expérience aléatoire, probabilité, probabilité conditionnelle</li>
+          <li>3. Variables aléatoires discrètes</li>
+          <li>4. Variables aléatoires réelles à densité</li>
+          <li>5. Statistique à une ou deux variables, représentation et analyse de données</li>
+        </ul>
       </div>
 
-      <h2>Bienvenue sur mon site !</h2>
-      <p style="font-style: italic; color: #444;">
-        Entre nous, ça s’écrit mieux comme ça :<br />
-        <span style="font-size: 1.6em;">\( e^{i\text{Mad}} \)</span>
-      </p>
+      <!-- 6-8 -->
+      <button class="accordion" aria-expanded="false" aria-controls="panel2" id="accordion2">🔢 Arithmétique & Nombres</button>
+      <div class="panel" id="panel2" role="region" aria-labelledby="accordion2">
+        <ul>
+          <li>6. Multiples et diviseurs dans \( \mathbb{N} \), nombres premiers</li>
+          <li>7. PGCD dans \( \mathbb{Z} \)</li>
+          <li>8. Congruences dans \( \mathbb{Z} \)</li>
+        </ul>
+      </div>
+
+      <!-- 9-11 -->
+      <button class="accordion" aria-expanded="false" aria-controls="panel3" id="accordion3">🔮 Nombres complexes & Trigonométrie</button>
+      <div class="panel" id="panel3" role="region" aria-labelledby="accordion3">
+        <ul>
+          <li>9. Différentes écritures d’un nombre complexe</li>
+          <li>10. Utilisation des nombres complexes en géométrie</li>
+          <li>11. Trigonométrie</li>
+        </ul>
+      </div>
+
+      <!-- 12-23 -->
+      <button class="accordion" aria-expanded="false" aria-controls="panel4" id="accordion4">🧭 Géométrie & Espace</button>
+      <div class="panel" id="panel4" role="region" aria-labelledby="accordion4">
+        <ul>
+          <li>12. Repérage dans le plan, dans l’espace, sur une sphère</li>
+          <li>13. Droites et plans dans l’espace</li>
+          <li>14. Transformations du plan. Frises et pavages</li>
+          <li>15. Relations métriques et angulaires dans le triangle</li>
+          <li>16. Solides de l’espace : représentations et calculs de volumes</li>
+          <li>17. Périmètres, aires, volumes</li>
+          <li>18. Exemples de résolution de problèmes de géométrie plane à l’aide des vecteurs</li>
+          <li>19. Produit scalaire dans le plan</li>
+          <li>20. Applications de la notion de proportionnalité à la géométrie</li>
+          <li>21. Problèmes de constructions géométriques</li>
+          <li>22. Exemples de problèmes d’alignement, de parallélisme</li>
+          <li>23. Exemples de problèmes d’intersection en géométrie</li>
+        </ul>
+      </div>
+      <!-- 24-26 -->
+      <button class="accordion" aria-expanded="false" aria-controls="panel5" id="accordion5">📊 Proportionnalité & Modélisation</button>
+      <div class="panel" id="panel5" role="region" aria-labelledby="accordion5">
+        <ul>
+          <li>24. Pourcentages et taux d’évolution</li>
+          <li>25. Problèmes conduisant à une modélisation par des équations ou des inéquations</li>
+          <li>26. Problèmes conduisant à une modélisation par des graphes, par des matrices</li>
+        </ul>
+      </div>
+
+      <!-- 27-40 -->
+      <button class="accordion" aria-expanded="false" aria-controls="panel6" id="accordion6">📈 Fonctions, Analyse & Calcul</button>
+      <div class="panel" id="panel6" role="region" aria-labelledby="accordion6">
+        <ul>
+          <li>27. Fonctions polynômes du second degré. Équations et inéquations du second degré</li>
+          <li>28. Suites numériques. Limites</li>
+          <li>29. Suites définies par récurrence \( u_{n+1} = f(u_n) \)</li>
+          <li>30. Détermination de limites de fonctions réelles de variable réelle</li>
+          <li>31. Théorème des valeurs intermédiaires</li>
+          <li>32. Nombre dérivé. Fonction dérivée</li>
+          <li>33. Fonctions exponentielles</li>
+          <li>34. Fonctions logarithmes</li>
+          <li>35. Fonctions convexes</li>
+          <li>36. Primitives, équations différentielles</li>
+          <li>37. Intégrales, primitives</li>
+          <li>38. Exemples de calculs d’intégrales (méthodes exactes, méthodes approchées)</li>
+          <li>39. Exemples de résolution d’équations (méthodes exactes, méthodes approchées)</li>
+          <li>40. Exemples de modèles d’évolution</li>
+        </ul>
+      </div>
+
+      <!-- 41-42 -->
+      <button class="accordion" aria-expanded="false" aria-controls="panel7" id="accordion7">💻 Algorithmique & Raisonnement</button>
+      <div class="panel" id="panel7" role="region" aria-labelledby="accordion7">
+        <ul>
+          <li>41. Problèmes dont la résolution fait intervenir un algorithme</li>
+          <li>42. Différents types de raisonnement en mathématiques</li>
+        </ul>
+      </div>
+
+      <!-- 43-44 -->
+      <button class="accordion" aria-expanded="false" aria-controls="panel8" id="accordion8">🧠 Histoire & Applications</button>
+      <div class="panel" id="panel8" role="region" aria-labelledby="accordion8">
+        <ul>
+          <li>43. Exemples d’approche historique de notions mathématiques enseignées au collège, au lycée</li>
+          <li>44. Applications des mathématiques à d’autres disciplines</li>
+        </ul>
+      </div>
     </section>
-
-    <section class="texte-home" style="max-width: 800px; margin: auto; padding: 20px; line-height: 1.7; font-size: 1.1em;">
-      <p>
-        Un clin d’œil mathématique à la fois à l’exponentielle, à l’imaginaire,<br />
-        et au <em>Mad</em>, parce que oui, il faut être un peu fou pour aimer autant les mathématiques.
-      </p>
-
-      <p>
-        Ce site me sert de <strong>dépôt personnel</strong> dans le cadre de ma préparation au
-        <strong>CAPES externe de mathématiques</strong>.
-        Tu y trouveras mes fiches, documents de travail et extraits de programmes.
-      </p>
-
-      <p>
-        L’objectif en créant ce site est de devenir suffisamment \( \cos(\tau) \)
-        pour mieux intégrer les notions essentielles en tant que futur enseignant.
-      </p>
-
-      <p>
-        Rien ne pourra me faire <strong>dériver</strong> de cette trajectoire.<br />
-        Et oui, je suis quelqu’un de très <strong>borné</strong>,<br />
-        mais c’est justement ce qui me permet de m’améliorer à l’<strong>infini</strong>,<br />
-        même si, mathématiquement, cette affaire serait <strong>classée sans suite</strong>.
-      </p>
-    </section>
-  </main>
+    </main>
 
   <footer>
     <p>&copy; 2025 eMat iMad - Tous droits réservés</p>
   </footer>
+
+  <script>
+    const accordions = document.querySelectorAll(".accordion");
+
+    accordions.forEach(btn => {
+      const panel = btn.nextElementSibling;
+
+      btn.addEventListener("click", function () {
+        const expanded = this.getAttribute("aria-expanded") === "true";
+
+        // Fermer tous les autres
+        accordions.forEach(other => {
+          other.setAttribute("aria-expanded", "false");
+          other.classList.remove("active");
+          other.nextElementSibling.style.maxHeight = null;
+        });
+
+        // Ouvrir si fermé
+        if (!expanded) {
+          this.setAttribute("aria-expanded", "true");
+          this.classList.add("active");
+          panel.style.maxHeight = panel.scrollHeight + "px";
+        }
+      });
+    });
+  </script>
 </body>
 </html>
-
-
-
