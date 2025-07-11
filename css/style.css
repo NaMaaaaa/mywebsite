@@ -1,4 +1,6 @@
 /* VARIABLES */
+@import url('https://fonts.cdnfonts.com/css/tex-gyre-pagella');
+
 :root {
   --color-bg: #fdfdfd;
   --color-text: #222;
@@ -6,7 +8,7 @@
   --color-light: #f1f1f1;
   --color-hover: #e0dff3;
   --color-border: #ccc;
-  --font-base: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-base: 'TeX Gyre Pagella', Palatino, 'Palatino Linotype', serif;
 }
 
 /* RESET & BASE */
@@ -30,6 +32,32 @@ p {
   line-height: 1.7;
   margin: 0.8em 0;
 }
+
+/* FORMULES MATHJAX */
+.formula {
+  font-size: 1.6em;
+  font-style: italic;
+  color: #444;
+}
+
+.formula-block {
+  display: block;
+  margin: 1em auto;
+  font-size: 1.3em;
+  text-align: center;
+}
+
+/* ENCADRÉS MATHÉMATIQUES */
+.encadre, .exemple, .definition {
+  border-left: 4px solid var(--color-accent);
+  background: #f9f9f9;
+  padding: 1em;
+  margin: 1.5em 0;
+}
+
+.encadre { border-color: #6a1b9a; }
+.exemple { border-color: #00796b; }
+.definition { border-color: #1976d2; }
 
 /* HEADER */
 header {
@@ -66,6 +94,7 @@ header {
   font-weight: bold;
   color: #2c3e50;
 }
+
 /* MENU NAVIGATION */
 nav .menu {
   list-style: none;
@@ -96,10 +125,12 @@ nav .menu > li > a {
   top: 100%;
   left: 0;
   z-index: 100;
+  transition: opacity 0.3s ease;
 }
 
 .menu li:hover .submenu {
   display: block;
+  opacity: 1;
 }
 
 /* HERO LOGO */
@@ -129,7 +160,8 @@ nav .menu > li > a {
   line-height: 1.7;
   font-size: 1.05em;
 }
-/* ACCORDION (Étape 1 + Étape 2) */
+
+/* ACCORDION */
 .accordion-section {
   max-width: 800px;
   margin: 0 auto;
@@ -232,3 +264,4 @@ footer {
     padding-left: 0;
   }
 }
+
