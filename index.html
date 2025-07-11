@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>eMat iMad - Accueil</title>
   <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.cdnfonts.com/css/tex-gyre-pagella" rel="stylesheet" />
   <script>
     window.MathJax = {
       tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
@@ -20,7 +21,7 @@
         <img src="assets/img/logo.png" alt="Logo eMat iMad" />
         <span class="site-title">eMat iMad</span>
       </a>
-      <nav>
+      <nav aria-label="Navigation principale">
         <ul class="menu">
           <li><a href="index.html">Accueil</a></li>
           <li>
@@ -53,9 +54,9 @@
       </div>
 
       <h2>Bienvenue sur mon site !</h2>
-      <p style="font-style: italic; color: #444;">
+      <p class="formula-intro">
         Entre nous, ça s’écrit mieux comme ça :<br />
-        <span style="font-size: 1.6em;">\( e^{i\text{Mad}} \)</span>
+        <span class="formula">\( e^{i\text{Mad}} \)</span>
       </p>
     </section>
 
@@ -88,5 +89,12 @@
   <footer>
     <p>&copy; 2025 eMat iMad - Tous droits réservés</p>
   </footer>
+
+  <noscript>
+    <p style="text-align: center; color: darkred;">
+      ⚠️ Les formules mathématiques nécessitent JavaScript pour s'afficher correctement.
+    </p>
+  </noscript>
 </body>
 </html>
+
