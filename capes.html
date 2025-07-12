@@ -6,7 +6,14 @@
   <title>CAPES - Leçons</title>
   <link rel="stylesheet" href="css/style.css" />
   <link href="https://fonts.cdnfonts.com/css/tex-gyre-pagella" rel="stylesheet" />
-  <script>MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: { fontCache: 'global' }
+    };
+  </script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
 </head>
 <body>
@@ -30,7 +37,7 @@
   <main>
     <section class="intro">
       <h1>Liste officielle des 44 leçons (Session 2025)</h1>
-      <p>Le texte ci‑dessous est **mot pour mot** celui publié par le ministère. Clique pour dérouler chaque thème.</p>
+      <p>Le texte ci‑dessous est <strong>mot pour mot</strong> celui publié par le ministère. Clique pour dérouler chaque thème.</p>
     </section>
 
     <section class="accordion-section">
@@ -44,14 +51,16 @@
           <li>5. Statistique à une ou deux variables, représentation et analyse de données.</li>
         </ul>
       </div>
+
       <button class="accordion" aria-expanded="false">🔢 Arithmétique & Nombres</button>
       <div class="panel">
         <ul>
-          <li>6. Multiples et diviseurs dans N, nombres premiers.</li>
-          <li>7. PGCD dans Z.</li>
-          <li>8. Congruences dans Z.</li>
+          <li>6. Multiples et diviseurs dans \( \mathbb{N} \), nombres premiers.</li>
+          <li>7. PGCD dans \( \mathbb{Z} \).</li>
+          <li>8. Congruences dans \( \mathbb{Z} \).</li>
         </ul>
       </div>
+
       <button class="accordion" aria-expanded="false">🔮 Nombres complexes & Trigonométrie</button>
       <div class="panel">
         <ul>
@@ -60,6 +69,7 @@
           <li>11. Trigonométrie.</li>
         </ul>
       </div>
+
       <button class="accordion" aria-expanded="false">🧭 Géométrie & Espace</button>
       <div class="panel">
         <ul>
@@ -85,12 +95,13 @@
           <li>26. Problèmes conduisant à une modélisation par des graphes, par des matrices.</li>
         </ul>
       </div>
+
       <button class="accordion" aria-expanded="false">📈 Fonctions, Analyse & Calcul</button>
       <div class="panel">
         <ul>
           <li>27. Fonctions polynômes du second degré. Équations et inéquations du second degré.</li>
           <li>28. Suites numériques. Limites.</li>
-          <li>29. Suites définies par récurrence un+1 = f(un).</li>
+          <li>29. Suites définies par récurrence \( u_{n+1} = f(u_n) \).</li>
           <li>30. Détermination de limites de fonctions réelles de variable réelle.</li>
           <li>31. Théorème des valeurs intermédiaires.</li>
           <li>32. Nombre dérivé. Fonction dérivée.</li>
@@ -104,6 +115,7 @@
           <li>40. Exemples de modèles d’évolution.</li>
         </ul>
       </div>
+
       <button class="accordion" aria-expanded="false">💻 Algorithmique & Raisonnement</button>
       <div class="panel">
         <ul>
@@ -111,6 +123,7 @@
           <li>42. Différents types de raisonnement en mathématiques.</li>
         </ul>
       </div>
+
       <button class="accordion" aria-expanded="false">🧠 Histoire & Applications</button>
       <div class="panel">
         <ul>
@@ -120,7 +133,6 @@
       </div>
     </section>
   </main>
-
   <footer>
     <p>&copy; 2025 eMat iMad – Tous droits réservés</p>
   </footer>
@@ -136,6 +148,19 @@
       });
     });
   </script>
+
+  <!-- MathJax pour les formules -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <!-- Script principal -->
   <script src="js/main.js"></script>
 </body>
 </html>
