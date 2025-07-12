@@ -4,21 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>eMat iMad - Accueil</title>
+
+  <!-- Feuille de style principale -->
   <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Police TeX Gyre Pagella -->
   <link href="https://fonts.cdnfonts.com/css/tex-gyre-pagella" rel="stylesheet" />
-
-  <!-- ✅ Configuration MathJax -->
-  <script>
-    window.MathJax = {
-      tex: {
-        inlineMath: [['$', '$'], ['\\(', '\\)']]
-      },
-      svg: { fontCache: 'global' }
-    };
-  </script>
-
-  <!-- ✅ Chargement de MathJax -->
-  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
 <body>
@@ -103,6 +94,19 @@
     </p>
   </noscript>
 
+  <!-- Script JS du site -->
   <script src="js/main.js"></script>
+
+  <!-- Configuration et chargement de MathJax -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </body>
 </html>
+
