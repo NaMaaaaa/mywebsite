@@ -6,16 +6,21 @@
   <title>eMat iMad - Accueil</title>
   <link rel="stylesheet" href="css/style.css" />
   <link href="https://fonts.cdnfonts.com/css/tex-gyre-pagella" rel="stylesheet" />
+
+  <!-- ✅ Configuration MathJax -->
   <script>
-  window.MathJax = {
-    tex: {
-      inlineMath: [['$', '$'], ['\\(', '\\)']]
-    },
-    svg: { fontCache: 'global' }
-  };
-</script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+
+  <!-- ✅ Chargement de MathJax -->
   <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
+
 <body>
   <header>
     <div class="logo-nav">
@@ -58,7 +63,7 @@
       <h2>Bienvenue sur mon site !</h2>
       <p class="formula-intro">
         Entre nous, ça s’écrit mieux comme ça :<br />
-        <span class="formula">\( e^{i\\text{Mad}} \)</span>
+        <span class="formula">\( e^{i\text{Mad}} \)</span>
       </p>
     </section>
 
