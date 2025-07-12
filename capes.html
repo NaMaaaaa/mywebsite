@@ -4,9 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CAPES - Leçons</title>
-<link rel="stylesheet" href="css/style.css" />
-<!-- Ajoute juste en dessous -->
-<link href="https://fonts.cdnfonts.com/css/tex-gyre-pagella" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.cdnfonts.com/css/tex-gyre-pagella" rel="stylesheet" />
   <script>
     MathJax = {
       tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
@@ -17,6 +16,7 @@
 </head>
 <body>
   <h1 class="sr-only">eMat iMad - Site de préparation au CAPES de mathématiques</h1>
+
   <header>
     <div class="logo-nav">
       <a href="index.html" class="logo-left">
@@ -26,21 +26,20 @@
       <nav>
         <ul class="menu">
           <li><a href="index.html">Accueil</a></li>
-<li>
-  <button class="submenu-toggle" aria-haspopup="true" aria-expanded="true">CAPES ▾</button>
-  <ul class="submenu" aria-label="Sous-menu CAPES">
-    <li><a href="capes.html">Leçons orales</a></li>
-    <li><a href="references.html">Références officielles</a></li>
-    <li><a href="demonstrations.html">Démonstrations</a></li>
-  </ul>
-</li>
-          <li><a href="capes.html">CAPES</a></li>
+          <li><a href="college.html">Collège</a></li>
+          <li>
+            <button class="submenu-toggle" aria-haspopup="true" aria-expanded="true">CAPES ▾</button>
+            <ul class="submenu" aria-label="Sous-menu CAPES">
+              <li><a href="capes.html">Leçons orales</a></li>
+              <li><a href="references.html">Références officielles</a></li>
+              <li><a href="demonstrations.html">Démonstrations</a></li>
+            </ul>
+          </li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
-
   <main>
     <section class="intro">
       <h2>Leçons du CAPES 2025</h2>
@@ -98,6 +97,7 @@
           <li>23. Exemples de problèmes d’intersection en géométrie</li>
         </ul>
       </div>
+
       <!-- 24-26 -->
       <button class="accordion" aria-expanded="false" aria-controls="panel5" id="accordion5">📊 Proportionnalité & Modélisation</button>
       <div class="panel" id="panel5" role="region" aria-labelledby="accordion5">
@@ -147,26 +147,28 @@
         </ul>
       </div>
     </section>
-    </main>
-
+  </main>
   <footer>
     <p>&copy; 2025 eMat iMad - Tous droits réservés</p>
   </footer>
 
   <script>
+    // Accordéons accessibles
     const accordions = document.querySelectorAll(".accordion");
 
     accordions.forEach(btn => {
       const panel = btn.nextElementSibling;
+      panel.setAttribute("aria-hidden", "true");
 
       btn.addEventListener("click", function () {
         const expanded = this.getAttribute("aria-expanded") === "true";
 
-        // Fermer tous les autres
+        // Fermer tous
         accordions.forEach(other => {
           other.setAttribute("aria-expanded", "false");
           other.classList.remove("active");
           other.nextElementSibling.style.maxHeight = null;
+          other.nextElementSibling.setAttribute("aria-hidden", "true");
         });
 
         // Ouvrir si fermé
@@ -174,14 +176,41 @@
           this.setAttribute("aria-expanded", "true");
           this.classList.add("active");
           panel.style.maxHeight = panel.scrollHeight + "px";
+          panel.setAttribute("aria-hidden", "false");
+        }
+      });
+
+      btn.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          this.click();
+        }
+      });
+    });
+
+    // Menu déroulant CAPES / Collège
+    const toggles = document.querySelectorAll(".submenu-toggle");
+
+    toggles.forEach(toggle => {
+      toggle.addEventListener("click", function () {
+        const expanded = this.getAttribute("aria-expanded") === "true";
+        this.setAttribute("aria-expanded", String(!expanded));
+      });
+
+      toggle.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          this.click();
         }
       });
     });
   </script>
+
   <noscript>
-  <p style="text-align: center; color: darkred;">
-    ⚠️ Les formules mathématiques nécessitent JavaScript pour s'afficher correctement.
-  </p>
-</noscript>
+    <p style="text-align: center; color: darkred;">
+      ⚠️ Les formules mathématiques nécessitent JavaScript pour s'afficher correctement.
+    </p>
+  </noscript>
 </body>
 </html>
+
