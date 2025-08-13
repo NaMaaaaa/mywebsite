@@ -1,10 +1,8 @@
-// Injection header/footer
 async function inject(part, targetId){
   const el=document.getElementById(targetId);
   if(!el) return;
-  const res=await fetch(`/_includes/${part}.html`);
+  const res=await fetch(`_includes/${part}.html`);
   el.innerHTML=await res.text();
-  // post-inject behaviors
   const burger=document.querySelector('.burger');
   const menu=document.getElementById('menu');
   if(burger && menu){
@@ -13,7 +11,6 @@ async function inject(part, targetId){
       burger.setAttribute('aria-expanded', open ? 'true':'false');
     });
   }
-  // theme toggle
   const btn=document.getElementById('themeToggle');
   if(btn){
     btn.addEventListener('click',()=>{
@@ -28,7 +25,6 @@ async function inject(part, targetId){
 inject('header','site-header');
 inject('footer','site-footer');
 
-// Accordions
 document.addEventListener('click',(e)=>{
   if(e.target.classList.contains('accordion')){
     const panel=e.target.nextElementSibling;
@@ -38,7 +34,6 @@ document.addEventListener('click',(e)=>{
   }
 });
 
-// Conditional MathJax loader: add data-mathjax on <html> when needed
 (function(){
   const needsMJ = document.documentElement.hasAttribute('data-mathjax');
   if(!needsMJ) return;
@@ -48,7 +43,6 @@ document.addEventListener('click',(e)=>{
   document.head.appendChild(s);
 })();
 
-// Register service worker
 if('serviceWorker' in navigator){
-  window.addEventListener('load',()=>navigator.serviceWorker.register('/sw.js'));
+  window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js'));
 }
