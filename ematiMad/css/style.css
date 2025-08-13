@@ -1,0 +1,188 @@
+/* =========================================================================
+   eMat iMad · feuille de style unifiée
+   Palette claire/sombre, accessibilité, layout fluide.
+   ========================================================================= */
+
+/* -------------------- Variables & Font -------------------- */
+@import url('https://fonts.cdnfonts.com/css/tex-gyre-pagella');
+
+:root {
+  /* Couleurs claires (par défaut) */
+  --color-bg: #fdfdfd;
+  --color-bg-alt: #ffffff;
+  --color-text: #222;
+  --color-muted: #555;
+  --color-accent: #6a1b9a;   /* violet principal */
+  --color-accent-light: #e0dff3;
+  --color-hover: #efe9f7;
+  --color-border: #ccc;
+  --color-shadow: rgba(0,0,0,0.05);
+
+  /* Typographie */
+  --font-base: 'TeX Gyre Pagella', Palatino, 'Palatino Linotype', serif;
+  --font-size: 17px;
+  --line-height: 1.7;
+}
+
+/* Dark mode ------------------------------------------------ */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #121212;
+    --color-bg-alt: #1f1f1f;
+    --color-text: #e5e5e5;
+    --color-muted: #b0b0b0;
+    --color-accent-light: #3e2a4d;
+    --color-hover: #2a1f33;
+    --color-border: #333;
+    --color-shadow: rgba(0,0,0,0.4);
+  }
+}
+
+/* -------------------- Reset & base ------------------------ */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { font-size: 100%; }
+
+body {
+  margin: 0;
+  font-family: var(--font-base);
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  background: var(--color-bg);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* -------------------- Headings & text --------------------- */
+h1, h2, h3, h4 {
+  font-weight: bold;
+  color: var(--color-accent);
+  line-height: 1.3;
+  margin: 1em 0 .4em;
+}
+h1 { font-size: 2rem; }
+h2 { font-size: 1.6rem; }
+h3 { font-size: 1.3rem; }
+
+p, ul, ol { margin-block: .6em; }
+ul { padding-left: 1.2em; }
+
+a {
+  color: var(--color-accent);
+  text-decoration-color: var(--color-accent-light);
+}
+a:hover,
+a:focus { text-decoration: underline; }
+
+/* -------------------- Skip Link --------------------------- */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.skip-link:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 1em;
+  padding: .4em .8em;
+  background: var(--color-accent);
+  color: #fff;
+  z-index: 999;
+}
+
+/* -------------------- Layout helpers --------------------- */
+.wrapper { width: 90%; max-width: 1000px; margin-inline: auto; }
+
+/* -------------------- Header & Navigation ---------------- */
+header {
+  background: var(--color-bg-alt);
+  border-bottom: 2px solid var(--color-border);
+  box-shadow: 0 2px 4px var(--color-shadow);
+}
+.logo-nav { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; }
+.logo-left { display: flex; align-items: center; text-decoration: none; }
+.logo-left img { height: 48px; margin-right: 8px; }
+.site-title { font-size: 1.5rem; font-weight: bold; color: var(--color-text); }
+
+/* Menu principal */
+nav ul.menu { list-style: none; display: flex; flex-wrap: wrap; gap: 1.5rem; margin: 0; padding: 0; }
+nav ul.menu > li { position: relative; }
+nav ul.menu > li > a { font-weight: bold; color: var(--color-text); text-decoration: none; padding: .6em 0; }
+
+/* Sous‑menu */
+nav ul.submenu {
+  display: none;
+  position: absolute;
+  left: 0; top: 100%;
+  min-width: 220px;
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  list-style: none;
+  padding: .5em;
+  box-shadow: 0 3px 6px var(--color-shadow);
+  z-index: 1000;
+}
+nav ul.submenu li { padding: .2em 0; }
+nav ul.submenu li a { color: var(--color-text); font-weight: normal; }
+nav ul.menu > li:hover > ul.submenu,
+nav ul.menu > li:focus-within > ul.submenu { display: block; }
+
+/* -------------------- Sections / Hero -------------------- */
+.intro,
+.texte-home,
+.accordion-section { padding: 2rem 1rem; }
+.intro { text-align: center; }
+.hero-logo { text-align: center; margin-block: 2rem 1rem; }
+.hero-img { width: 140px; }
+
+/* -------------------- Accordion -------------------------- */
+.accordion { background: var(--color-accent-light); border: none; width: 100%; padding: 1rem; font-size: 1.1rem; cursor: pointer; position: relative; transition: background .3s; }
+.accordion:hover,
+.accordion:focus-visible { background: var(--color-hover); }
+.accordion::after {
+  content: "▼"; position: absolute; right: 1rem; transition: transform .3s;
+}
+.accordion.active::after { transform: rotate(180deg); }
+
+.panel { max-height: 0; overflow: hidden; transition: max-height .4s ease-out; background: var(--color-bg-alt); border-left: 4px solid var(--color-accent); padding: 0 1rem; }
+.panel ul { list-style: disc; margin: .5em 0 1em 1.2em; }
+
+/* -------------------- Encadrés --------------------------- */
+.encadre, .exemple, .definition {
+  padding: 1em 1.2em;
+  margin-block: 1.5em;
+  border-left: 5px solid var(--color-accent);
+  background: var(--color-bg-alt);
+  box-shadow: 0 2px 4px var(--color-shadow);
+}
+.exemple { border-color: #00796b; }
+.definition { border-color: #1976d2; }
+
+/* -------------------- Footer ----------------------------- */
+footer { background: var(--color-bg-alt); text-align: center; padding: 1rem; font-size: .9rem; border-top: 1px solid var(--color-border); }
+
+/* -------------------- Responsive ------------------------- */
+@media (max-width: 768px) {
+  nav ul.menu { flex-direction: column; gap: .8rem; }
+}
+
+/* -------------------- Impression ------------------------- */
+@media print {
+  nav, footer { display: none !important; }
+  a::after { content: " (" attr(href) ")"; font-size: .8em; }
+}
+
+/* -------------------- Focus & Selection ------------------ */
+:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 2px; }
+::selection { background: var(--color-accent); color: #fff; }
+
+/* -------------------- Tables (Programmes) ---------------- */
+table.programme { border-collapse: collapse; width: 100%; margin-block: 1em; }
+table.programme th, table.programme td { border: 1px solid var(--color-border); padding: .6em .4em; }
+table.programme th { background: var(--color-accent-light); }
